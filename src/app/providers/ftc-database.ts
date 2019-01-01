@@ -30,7 +30,7 @@ export class FTCDatabase {
         'X-Application-Origin': 'TOA-WebApp-1819',
         'Content-Type': 'application/json'
       });
-      this.http.get('https://theorangealliance.org/api' + url, { headers: authHeader }).subscribe((data: any[]) => {
+      this.http.get('http://35.202.99.121/api' + url, { headers: authHeader }).subscribe((data: any[]) => {
         resolve(data);
       }, (err: any) => {
         reject(err);
