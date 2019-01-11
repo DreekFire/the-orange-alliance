@@ -11,14 +11,14 @@ export class AwardItemComponent {
   @Input() mini: boolean;
 
   getIcon(): string {
-    const awardNum =  parseInt(this.award.awardKey.replace(/\D/g,'')); // Strip all non-numeric characters (get the award number)
+    const awardNum =  parseInt(this.award.awardKey.replace(/\D/g, '' )); // Strip all non-numeric characters (get the award number)
     if (isNaN(awardNum)) {
       return 'trophy-award';
     } else {
       if (awardNum < 10) {
         return `numeric-${awardNum}-box-outline`;
       } else {
-        return 'numeric-9-plus-box-outline';
+        return 'trophy-award';
       }
     }
   }

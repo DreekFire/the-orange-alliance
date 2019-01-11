@@ -26,7 +26,7 @@ import EventParticipant from '../../models/EventParticipant';
 export class TeamComponent implements OnInit {
 
   team: Team;
-  teamKey: string;
+  teamKey: number;
   years: any;
   seasons: Season[];
   currentSeason: Season;
@@ -72,11 +72,11 @@ export class TeamComponent implements OnInit {
           });
         }
         if (this.team.teamNameShort !== null) {
-          this.app.setTitle(this.team.teamNameShort + ' (' + this.team.teamNumber + ')');
+          this.app.setTitle(this.team.teamNameShort + ' (' + this.team.teamKey + ')');
         } else {
-          this.app.setTitle('Team ' + this.team.teamNumber);
+          this.app.setTitle('Team ' + this.team.teamKey);
         }
-        this.app.setDescription(`Team information and competition results for FIRST Tech Challenge Team #${ this.team.teamNumber }`);
+        this.app.setDescription(`Team information and competition results for FIRST Tech Challenge Team #${ this.team.teamKey }`);
       } else {
         this.router.navigate(['/not-found']);
       }
